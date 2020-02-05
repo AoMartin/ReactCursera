@@ -2,7 +2,6 @@ import React from 'react';
 import { Card, CardImg, CardText, CardBody,
     CardTitle } from 'reactstrap';
 
-
     function RenderDish({dish}) {
             return(
                 <Card>
@@ -41,7 +40,7 @@ import { Card, CardImg, CardText, CardBody,
 
     const  DishDetail = (props) => {
       
-        if (this.props.dish != null)
+        if (props.dish != null)
           return(
               <div className="container">
                 <div className="row">
