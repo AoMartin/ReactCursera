@@ -1,7 +1,29 @@
-import React from 'react';
+import React , {Component} from 'react';
 import { Card, CardImg, CardText, CardBody,
-    CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
+    CardTitle, Breadcrumb, BreadcrumbItem, 
+    Button, Modal, ModalHeader, ModalBody } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import { Control, LocalForm, Errors } from 'react-redux-form';
+
+const required = (val) => val && val.length;
+const maxLength = (len) => (val) => !(val) || (val.length <= len);
+const minLength = (len) => (val) => val && (val.length >= len);
+
+class CommentForm extends Component {
+
+    render(){
+        return(
+            <div>
+
+            <Button outline color="secondary" className="fa fa-pencil" type="submit">
+            Submit Comment
+            </Button>
+
+            </div>
+        );
+
+    }
+}
 
     function RenderDish({dish}) {
             return(
@@ -60,6 +82,7 @@ import { Link } from 'react-router-dom';
                 </div>
                 <div className="col-12 col-md-5 m-1">
                     <RenderComments comments={props.comments} />
+                    <CommentForm/>
                 </div>
             </div>
             </div>
